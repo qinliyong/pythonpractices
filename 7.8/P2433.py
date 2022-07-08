@@ -71,7 +71,8 @@ def q5():
     lb =220
     va =12
     vb =20
-    t = (la+lb)/(va+vb)
+    t = int((la+lb)/(va+vb))
+    print(t)
 
 def q6():
     a =6
@@ -97,6 +98,7 @@ def q9():
     print(t)
 
 def q10():
+    print(9)
 
 def q11():
     va=5
@@ -120,4 +122,34 @@ def q13():
     print(int(a))
 
 def q14():
-    print(40)
+    print(50)
+
+a = int(input())
+if a==1:
+    q1()
+elif a==2:
+    q2()
+elif a==3:
+    q3()
+elif a==4:
+    q4()
+elif a==5:
+    q5()
+elif a==6:
+    q6()
+elif a==7:
+    q7()
+elif a==8:
+    q8()
+elif a==9:
+    q9()
+elif a==10:
+    q10()
+elif a==11:
+    q11()
+elif a==12:
+    q12()
+elif a==13:
+    q13()
+elif a==14:
+    q14()
