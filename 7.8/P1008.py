@@ -6,28 +6,35 @@
 输出格式
 若干行，每行 3 个数字。按照每行第 1 个数字升序排列。
 '''
-s = [1,2,3,4,5,6,7,8,9]
-for a in range(100,333):
-    b = 2*a
-    c = 3*a
-    s[0]=a//100
-    s[1]=a%100//10
-    s[2]=a%10
-    s[3]=b//100
-    s[4]=b%100//10
-    s[5]=b%10
-    s[6]=c//100
-    s[7]=c%100//10
-    s[8]=c%10
-    s2=list(dict.fromkeys(s))
-    if len(s2) == len(s):
-        #print(s)
-        for i in range(3):
-            print(s[i],end="")
-        print(" ",end="")
-        for i in range(3,6):
-            print(s[i],end="")
-        print(" ",end="")
-        for i in range(6,9):
-            print(s[i],end="")
-        print("")
+# s = [1,2,3,4,5,6,7,8,9]
+# for a in range(100,333):
+#     b = 2*a
+#     c = 3*a
+#     s[0]=a//100
+#     s[1]=a%100//10
+#     s[2]=a%10
+#     s[3]=b//100
+#     s[4]=b%100//10
+#     s[5]=b%10
+#     s[6]=c//100
+#     s[7]=c%100//10
+#     s[8]=c%10
+#     s2=list(dict.fromkeys(s))
+#     if len(s2) == len(s):
+#         #print(s)
+#         for i in range(3):
+#             print(s[i],end="")
+#         print(" ",end="")
+#         for i in range(3,6):
+#             print(s[i],end="")
+#         print(" ",end="")
+#         for i in range(6,9):
+#             print(s[i],end="")
+#         print("")
+for i in range(192, 328):
+    num1=str(2*i)
+    num2=str(3*i)
+    num3=str(i)
+    a=set(num1+num2+num3)
+    if len(a)==9 and len(set.intersection(a,{"0"}))==0:
+        print(int(num3),int(num1),int(num2))
