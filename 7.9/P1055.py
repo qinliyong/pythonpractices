@@ -14,7 +14,7 @@ ISBN 码的首位数字表示书籍的出版语言，例如 0 代表英语；第
 一行，假如输入的 ISBN 号码的识别码正确，那么输出 Right，否则，按照规定的格式，输出正确的 ISBN 号码（包括分隔符 -）。
 '''
 #0-234-6789A-C
-isbn = input()
+isbn = input().strip()
 a1 = int(isbn[0])
 a2 = int(isbn[2])
 a3 = int(isbn[3])
@@ -24,29 +24,38 @@ a6 = int(isbn[7])
 a7 = int(isbn[8])
 a8 = int(isbn[9])
 a9 = int(isbn[10])
-#track = int(isbn[12])
+#check = int(isbn[12])
 
 jiaoyan = (a1+ 2*a2 + 3*a3 + 4*a4 + 5*a5 + 6*a6 + 7*a7 + 8*a8 + 9*a9)%11
-if jiaoyan != 10:
-    if isbn[12] == "X":
-        for i in range(len(isbn)-1):
-            print(isbn[i],end="")
-        print(jiaoyan)
-        exit()
-    elif jiaoyan == int(isbn[12]):
-        print('Right')
-        exit()
-    else:
-        for i in range(len(isbn)-1):
-            print(isbn[i],end="")
-        print(jiaoyan)
-        exit()
-elif jiaoyan == 10:
-    if isbn[12] == "X":
-        print('Right')
-        exit()
-    else:
-        for i in range(len(isbn)-1):
-            print(isbn[i],end="")
-        print("X")
-        exit()
+# if jiaoyan != 10:
+#     if isbn[12] == "X":
+#         for i in range(len(isbn)-1):
+#             print(isbn[i],end="")
+#         print(jiaoyan)
+#         exit()
+#     elif jiaoyan == int(isbn[12]):
+#         print('Right')
+#         exit()
+#     else:
+#         for i in range(len(isbn)-1):
+#             print(isbn[i],end="")
+#         print(jiaoyan)
+#         exit()
+# elif jiaoyan == 10:
+#     if isbn[12] == "X":
+#         print('Right')
+#         exit()
+#     else:
+#         for i in range(len(isbn)-1):
+#             print(isbn[i],end="")
+#         print("X")
+#         exit()
+if jiaoyan == 10:
+    check = 'X'
+else:
+    check = str(jiaoyan)
+
+if check == isbn[-1]:
+    print('Right')
+else:
+    print(isbn[0:12]+check)
